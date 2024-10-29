@@ -4,7 +4,7 @@ Donate link: http://userswp.io/
 Tags: social login, facebook login, google login, twitter login, linkedIn login, vkontakte login, woocommerce login, facebook, twitter, google, social network login, social plugin, userswp
 Requires at least: 4.9
 Tested up to: 6.6
-Stable tag: 1.3.27
+Stable tag: 1.4.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,9 @@ No questions so far, but don't hesitate to ask!
 2. WP Login (brand icons removed in screenshots due to WP rules).
 
 == Changelog ==
+
+= 1.4.0 - 2024-10-29 =
+* Login redirect should prompt to choose Google account - CHANGED
 
 = 1.3.27 =
 * New user registration can fail if email IS verified as with Google - FIXED
@@ -182,7 +185,7 @@ No questions so far, but don't hesitate to ask!
 = 1.0.2 =
 * Major code refactoring - CHANGED
 * Docblocks added - ADDED
-* Linked in sometimes does not connect becasue of trailing slash missing in subdomain - FIXED
+* Linked in sometimes does not connect because of trailing slash missing in subdomain - FIXED
 * Delete social row when the user get deleted - ADDED
 
 = 1.0.1 =
