@@ -11,7 +11,7 @@ if ( isset( $providers ) && count( $providers ) > 0 ) {
 	echo '<div class="bsui"><hr />';
 
 	if ( $title ) {
-		echo '<div class="text-muted h5 mt-n2 mb-2">' . esc_attr_e( $title, 'uwp-social' ) . '</div>';
+		echo '<div class="text-muted h5 mt-n2 mb-2">' . esc_attr__( $title, 'uwp-social' ) . '</div>';
 	}
 
 	foreach ( $providers as $array_key => $provider ) {
@@ -31,6 +31,8 @@ if ( isset( $providers ) && count( $providers ) > 0 ) {
 			if ( isset( $redirect_to ) && ! empty( $redirect_to ) ) {
 				$url .= '&redirect_to=' . $redirect_to;
 			}
+
+			$url = apply_filters( 'uwp_social_login_button_url', $url, $provider_id, $args );
 
             $icons = array(
                 'facebook' => 'fab fa-facebook-f',
