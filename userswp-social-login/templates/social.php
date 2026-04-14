@@ -29,19 +29,22 @@ if(isset($providers) && count($providers) > 0) {
 
 			$url = apply_filters( 'uwp_social_login_button_url', $url, $provider_id, $args );
 
-			//General |Facebook |Twitter |LinkedIn |Instagram |Yahoo |WordPress |VKontakte
 			$icons = array(
-				'facebook'  => 'fab fa-facebook-f',
-				'twitter'   => 'fab fa-twitter',
-				'instagram' => 'fab fa-instagram',
-                'linkedin'  => 'fab fa-linkedin-in',
-                'linkedinopenid'  => 'fab fa-linkedin-in',
-				'wordpress' => 'fab fa-wordpress-simple',
-				'vkontakte' => 'fab fa-vk',
-
+                'facebook' => 'fab fa-facebook-f',
+                'twitter' => 'fab fa-x-twitter',
+                'instagram' => 'fab fa-instagram',
+                'linkedinopenid' => 'fab fa-linkedin-in',
+                'wordpress' => 'fab fa-wordpress-simple',
 			);
 
-			$social_name_class = strtolower( $provider_id );
+            if('twitter' === $provider_id){
+                $social_name_class =  'x-twitter';
+            } elseif('linkedinopenid' === $provider_id){
+                $social_name_class = 'linkedin';
+            } else {
+                $social_name_class = strtolower( $provider_id );
+            }
+
 			$social_icon_class = isset( $icons[ $social_name_class ] ) ? $icons[ $social_name_class ] : "fab fa-" . $social_name_class;
 
 			if ( ! empty( $key ) && ! empty( $secret ) ) {
