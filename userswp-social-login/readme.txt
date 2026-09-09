@@ -3,8 +3,8 @@ Contributors: stiofansisland, paoltaia, ayecode
 Donate link: http://userswp.io/
 Tags: social login, facebook login, google login, twitter login, X login, linkedIn login, login, woocommerce login, facebook, twitter, X, google, social network login, social plugin, userswp
 Requires at least: 6.1
-Tested up to: 7.0
-Stable tag: 1.5.9
+Tested up to: 7.1
+Stable tag: 1.5.10
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -17,6 +17,10 @@ Social Login addon for [UsersWP](https://wordpress.org/plugins/userswp/).
 This addon lets your user to register and login with popular sites like Facebook, Google, X, LinkedIn, Yahoo, WordPress etc.
 
 100% translatable.
+
+== Security ==
+
+To report a security vulnerability, please review our [vulnerability disclosure policy](https://ayecode.io/vulnerability-disclosure-policy/).
 
 == Installation ==
 
@@ -43,6 +47,11 @@ No questions so far, but don't hesitate to ask!
 2. WP Login (brand icons removed in screenshots due to WP rules).
 
 == Changelog ==
+
+= 1.5.10 - 2026-09-09 =
+* Social login could authenticate an existing WordPress account using a provider-asserted email address that the provider had not confirmed the user owned, allowing account takeover in some configurations. Email addresses are now only used to resolve an existing account when the provider positively confirms ownership; unconfirmed addresses are routed through account registration/linking instead. - FIXED/SECURITY
+* The cached provider profile is now cleared from the session immediately after a login completes, so a replayed request can no longer reissue an auth cookie without a fresh round trip to the provider. - FIXED/SECURITY
+* LinkedIn (OpenID) login now correctly recognises LinkedIn's verified-email signal instead of always treating the address as unverified. - FIXED
 
 = 1.5.9 - 2026-08-19 =
 * Hybridauth library upgraded to v3.13 - CHANGED
