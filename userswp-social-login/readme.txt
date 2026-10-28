@@ -4,7 +4,7 @@ Donate link: http://userswp.io/
 Tags: social login, facebook login, google login, twitter login, X login, linkedIn login, login, woocommerce login, facebook, twitter, X, google, social network login, social plugin, userswp
 Requires at least: 6.1
 Tested up to: 7.1
-Stable tag: 1.5.10
+Stable tag: 1.5.11
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -47,6 +47,9 @@ No questions so far, but don't hesitate to ask!
 2. WP Login (brand icons removed in screenshots due to WP rules).
 
 == Changelog ==
+
+= 1.5.11 - 2026-10-28 =
+* Social login buttons lost the return URL when it had more than one query arg (the redirect_to was HTML escaped and not encoded), so the login could stall on "Processing, please wait..."; button URLs are now built with every arg encoded - FIXED
 
 = 1.5.10 - 2026-09-09 =
 * Social login could authenticate an existing WordPress account using a provider-asserted email address that the provider had not confirmed the user owned, allowing account takeover in some configurations. Email addresses are now only used to resolve an existing account when the provider positively confirms ownership; unconfirmed addresses are routed through account registration/linking instead. - FIXED/SECURITY
